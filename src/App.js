@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { BiLogoGmail, BiLogoGithub, BiLogoBehance, BiLogoLinkedin } from "react-icons/bi";
 
 const App = () => {
   const [todos, setTodos] = React.useState([]);
@@ -93,20 +94,35 @@ const App = () => {
                     onChange={(e) => setEditingText(e.target.value)}
                   />
                 ) : (
-                  <div>{todo.text}</div>
+                  <div class="text">{todo.text}</div>
                 )}
               </div>
               <div className="todo-actions">
                 {todo.id === todoEditing ? (
-                  <button onClick={() => submitEdits(todo.id)}>Submit Edits</button>
+                  <button className="btn1" onClick={() => submitEdits(todo.id)}>Submit Edits</button>
                 ) : (
-                  <button onClick={() => setTodoEditing(todo.id)}>Edit</button>
+                  <button className="btn2" onClick={() => setTodoEditing(todo.id)}>Edit</button>
                 )}
 
-                <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                <button className="btn3" onClick={() => deleteTodo(todo.id)}>Delete</button>
               </div>
             </div>
           ))}
+          <div class="wrapper">
+    <footer class="footer">
+        <div>
+        <div class="row">
+        <a href="mailto:maiamanhoon@gmail.com"><BiLogoGmail /></a>
+        <a href="https://github.com/AmanKumarVerma11"><BiLogoGithub /></a>
+        <a href="https://www.behance.net/amannn"><BiLogoBehance /></a>
+        <a href="https://www.linkedin.com/in/aman-kr-verma11/"><BiLogoLinkedin /></a>
+        </div>
+        <div class="row">
+        || Developed By: Aman kumar Verma || 
+        </div>
+        </div>
+    </footer>
+    </div>
         </div>
       );
     };
